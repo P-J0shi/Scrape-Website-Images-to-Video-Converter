@@ -1,7 +1,7 @@
 
-# WebImage2Video
+# Scrape-Website-Images-to-Video-Converter
 
-WebImage2Video is a Python script that scrapes images from websites and converts them into a video. It utilizes libraries such as BeautifulSoup for web scraping and OpenCV for image processing and video generation.
+Image2Video is a Python script that scrapes images from websites and converts them into a video. It utilizes libraries such as BeautifulSoup for web scraping and OpenCV for image processing and video generation.
 
 ## Features:
 
