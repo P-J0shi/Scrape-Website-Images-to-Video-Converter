@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import os
 import urllib
 import cv2
-import os
 
 def scrape_and_download_images(url, save_folder):
     headers = {
@@ -39,8 +38,8 @@ def scrape_and_download_images(url, save_folder):
                 img_path = os.path.join(save_folder, img_filename)
                 urllib.request.urlretrieve(img_url, img_path)
                 print(f"Downloaded: {img_url}")
-    # else:
-    #     print("Failed to fetch the URL. Response Status Code:", response.status_code)
+    else:
+        print("Failed to fetch the URL. Response Status Code:", response.status_code)
                 
 
 
@@ -50,15 +49,15 @@ def scrape_images_from_multiple_pages(base_url, num_pages, save_folder):
         url = f"{base_url}{page_number}"
         print(f"Scraping images from page {page_number}")
         scrape_and_download_images(url, save_folder)
+
 # Example usage
 
 url = ''  # Replace with the URL you want to scrape
-save_folder = '' #Replace with the path where you want to store   
-num_pages = 25
+save_folder = '' # Replace with the path where you want to store the images
+num_pages = 5 # Replace with the number of pages that you want to scrape
 scrape_images_from_multiple_pages(url, num_pages, save_folder)
 
 import cv2
-from cv2 import dnn_superres
 import os
 
 def images_to_video(image_folder, output_video, fps):
@@ -93,9 +92,6 @@ def images_to_video(image_folder, output_video, fps):
 
 if __name__ == "__main__":
     image_folder = "" # Image folder path
-    output_video = "" #Output video path/name
+    output_video = "" # Output video path/name
     fps = 0.25
-  
-
-images_to_video(image_folder, output_video, fps)
-
+    images_to_video(image_folder, output_video, fps)
